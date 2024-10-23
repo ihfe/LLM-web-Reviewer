@@ -1,0 +1,9 @@
+This paper presents extensions of manifold learning techniques (SNE, LLE, and ISOMAP) for dimensionality reduction and visualization in multi-view data contexts. These multi-view approaches aim to yield more comprehensible sample projections than when visualizing each data-view individually. The authors compare their multi-view methods with existing approaches using both real and synthetic datasets. Among these, multi-SNE demonstrates superior performance.
+
+Strengths:
+Overall, the language appears professional and clear, adhering to academic standards.
+
+ hyperparameters and providing detailed guidelines for their selection would greatly benefit the paper. This would ensure the methods' broader applicability and ease of use. Could the authors elaborate on the hyperparameter selection process for each proposed method?
+
+Validity of the findings：
+NO

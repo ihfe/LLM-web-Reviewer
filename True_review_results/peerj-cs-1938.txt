@@ -1,0 +1,18 @@
+Basic reporting
+After reading this article, I have the following suggestions and questions:. The paper needs to improve according to theses.
+1) The abstract could be enhanced by explicitly stating the main problem addressed and the unique aspects of your proposed solution.
+2) The manuscript contains several English-language errors. It is advised to conduct thorough proofreading to rectify these issues.
+3) Briefly specify the challenges addressed by IR-DD for more clarity.
+4) Certain sections of the manuscript could benefit from clearer expressions. Please review and enhance the clarity of your statements.
+5) The resolution of Figure 4 appears to be suboptimal. Kindly consider redrawing it for improved clarity and visual quality.
+6) Explain clearly the integration of YOLOv8 and BiFPN in the IR-DD framework.
+7) Ensure that all in-text citations are accurately linked to the corresponding references in the bibliography.
+8) Revised the abstract and briefly specified the challenges addressed by IR-DD for more clarity.
+9) The use of YOLOv8 and BiFPN in IR-DD, it could benefit from emphasizing the novelty of this integration. Clearly articulating how this combination is unique and contributes to the field of road distress detection.
+10) Consider adding a brief section on potential future work or extensions of IR-DD, providing readers with insights into the ongoing research possibilities.
+11. reviewed and compared your work with research "Islam, U., Al-Atawi, A. A., Alwageed, H. S., Mehmood, G., Khan, F., & Innab, N. (2024). Detection of renal cell hydronephrosis in ultrasound kidney images: a study on the efficacy of deep convolutional neural networks. PeerJ Computer Science, 10, e1797."
+Validity of the findings
+Would you mind providing more details about what makes your approach or contribution unique?
+
+Additional comments
+Enhance the manuscript's overall coherence for a more seamless flow of ideas

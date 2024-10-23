@@ -1,0 +1,16 @@
+Basic reporting
+Based on a set of polling communication station data sets, this paper uses one-dimensional convolutional neural network (CNN) to segment the data, thus improving its ability to identify various communication activities. This study evaluated the reliability of CNN in several real scenes, and checked its accuracy under noise interference, different intercepting signal lengths, interference at different frequency points, and dynamic changes in the position of outposts. The effectiveness and reliability of convolutional neural network in identifying communication behaviors in different environments are verified. The overall structure is relatively complete and the experimental design idea is rigorous, but there are some shortcomings as follows:
+(1) In the background introduction of signal source, the introduction of each communication mode is slightly redundant. The main body of this paper is to verify the recognition ability of convolutional neural network for high similarity signals. However, the introduction of each communication mode in this paper is obviously irrelevant to the subject, so some appropriate simplification can be made in this part.
+(2) Some experimental condition data settings in the article lack some proper explanations, for example, in the setting of noise conditions in the article, some numerical values are not explained, which may cause confusion to the readers, and we hope to add explanations.
+
+Experimental design
+In general, the experimental design is complete. However, considering the recognition rate of the convolutional neural network for the communication signal under different experimental conditions, and full experimental verification, but the problem of randomness of the experimental data is not well solved in the overall experimental design. The number of experiments should be appropriately increased to maintain the stability of the data. As seen from the data in Table 2, due to the randomness of the experimental results, leads to fluctuations in the experimental results. Although it does not affect the overall trend change, the method used in this article is to increase the number of experiments, and use the Monte Carlo idea to obtain stable values. But it is clear from the curve in Figure 6 that the number of experiments in this article is not enough to obtain stable values, so you can increase the number of experiments to obtain more accurate trend graphs.
+
+Validity of the findings
++ The observed trends in the results supports the validity the findings.
+
+Additional comments
++ On page 8, "db" should be read as "dB".
++ This manuscript requires major revisions.
+
+review results: Major revision

@@ -1,0 +1,16 @@
+Basic reporting
+The author should discuss the current research progress and gaps in the Introduction section, rather than simply listing previous research.
+
+Experimental design
+This paper did not clarify the relationship between the Bi-LSTM model and the RF model. The correlation between these three modules needs to be explained.
+
+Experimental design
+1. Expanding the testing of these methods across diverse datasets would enhance the paper by demonstrating their effectiveness and robustness in varied scenarios. Have the authors explored the application of these methods on additional datasets?
+
+2. Investigating the sensitivity of these methods to hyperparameters and providing detailed guidelines for their selection would greatly benefit the paper. This would ensure the methods' broader applicability and ease of use. Could the authors elaborate on the hyperparameter selection process for each proposed method?
+
+Validity of the findings
+ 1、In terms of feature extraction, the author only displayed the extracted features. Are these extracted features reasonable? The correlation with existing literature has not been discussed. The insight by feature extraction is not explained.
+
+2、Methods Section of the paper needs some improvements.
+What are the features for the dataset? Please give a few examples or explain in plain words what the features typically represent.

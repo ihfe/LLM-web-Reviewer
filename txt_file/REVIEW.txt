@@ -1,0 +1,258 @@
+【Review: The authors present a method for learning word embeddings from related groups of data. The model is based on tensor factorization which extends GloVe to higher order co-ocurrence tensors, where the co-ocurrence is of words within subgroups of the text data. These two papers need to be cited:
+
+Rudolph et al., NIPS 2017, "Sturctured Embedding Models for Grouped Data": This paper also presents a method for learning embeddings specific for subgroups of the data, but based on hierarchical modeling. An experimental comparison is needed.
+
+Cotterell et al., EACL 2017 "Explaining and Generalizing Skip-Gram through Exponential Family Principal Component Analysis": This paper also derives a tensor factorization based approach for learning word embeddings for different covariates. Here the covariates are morphological tags such as part-of-speech tags of the words.
+
+Due to these two citations, the novelty of both the problem set-up of learning different embeddings for each covariate and the novelty of the tensor factorization based model are limited.
+
+The writing is ok. I appreciated the set-up of the introduction with the two questions. However, the questions themselves could have been formulated differently: 
+Q1: the way Q1 is formulated makes it sound like the covariates could be both discrete and continuous while the method presented later in the paper is only for discrete covariates (i.e. group structure of the data).
+Q2: The authors mention topic alignment without specifying what the topics are aligned to. It would be clearer if they stated explicitly that the alignment is between covariate-specific embeddings. It is also distracting that they call the embedding dimensions topics.
+Also, why highlight the problem of authorship attribution of Shakespear's work in the introduction, if that problem is not addressed later on?
+
+In the model section, the paragraphs "notation" and "objective function and discussion" are clear.  I also liked the idea of having the section "A geometric view of embeddings and tensor decomposition", but that section needs to be improved. For example, the authors describe RandWalk (Arora et al. 2016) but how their work falls into that framework is unclear.
+In the third paragraph, starting with "Therefore we consider a natural extension of this model, ..." it is unclear which model the authors are referring to. (RandWalk or their tensor factorization?).
+What are the context vectors in Figure 1?  I am guessing the random walk transitions are the ellipsoids? How are they to be interpreted? 
+
+In the last paragraph, beginning with "Note that this is essentially saying...", I don't agree with the argument that the "base embeddings" decompose into independent topics. The dimensions of the base embeddings are some kind of latent attributes and each individual dimension could be used by the model to capture a variety of attributes. There is nothing that prevents the model from using multiple dimensions to capture related structure of the data. Also, the qualitative results in Table 3 do not convince me that the embedding dimensions represent topics. For example "horses" has highest value in embedding dimension 99. It's nearest neighbours in the embedding space (i.e. semantically similar words) will also have high values in coordinate 99. Hence, the apparent semantic coherence in what the authors call "topics".
+
+The authors present multiple novelty and quantitative evaluations. The clustering by weight (4.1.) is nice and convincing that the model learns something useful. 4.2, the only quantitative analysis was missing some details. Please give references for the evaluation metrics used, for proper credit and so people can look up these tasks. Also, comparison needed to fitting GloVe on the entire corpus (without covariates) and existing methods Rudolph et al. 2017 and Cotterell et al. 2017.   
+Section 5.2 was nice and so was 5.3. However, for the covariate specific analogies (5.3.) the authors could also analyze word similarities without the analogy component and probably see similar qualitative results. Specifically, they could analyze for a set of query words, what the most similar words are in the embeddings obtained from different subsections of the data.
+
+PROS:
++ nice tensor factorization model for learning word embeddings specific to discrete covariates.
++ the tensor factorization set-up ensures that the embedding dimensions are aligned 
++ clustering by weights (4.1) is useful and seems coherent
++ covariate-specific analogies are a creative analysis
+
+CONS:
+- problem set-up not novel and existing approach not cited (experimental comparison needed)
+- interpretation of embedding dimensions as topics not convincing
+- connection to Rand-Walk (Aurora 2016) not stated precisely enough
+- quantitative results (Table 1) too little detail:
+        * why is this metric appropriate?
+        * comparison to GloVe on the entire corpus (not covariate specific)
+        * no reference for the metrics used (AP, BLESS, etc.?)
+- covariate specific analogies presented confusingly and similar but simpler analysis might be possible by looking at variance in neighbours v_b and v_d without involving v_a and v_c (i.e. don't talk about analogies but about similarities)】
+【Review: In this paper, the authors aim to better understand the classification of neural networks. The authors explore the latent space of a variational auto encoder and consider the perturbations of the latent space in order to obtain the correct classification. They evaluate their method on CelebA and MNIST datasets.
+
+Pros:
+
+ 1) The paper explores an alternate methodology that uses perturbation in latent spaces to better understand neural networks 
+2) It takes inspiration from adversarial examples and uses the explicit classifier loss to better perturb the 
+ in the latent space
+3) The method is quite simple and captures the essence of the problem well
+
+Cons:
+The main drawback of the paper is it claims to understand working of neural networks, however, actually what the authors end up doing are perturbations of the encoded latent space. This would evidently not explain why a deep network generates misclassifications for instance understanding the failure modes of ResNet or DenseNet cannot be obtained through this method. Other drawbacks include:
+
+1)     They do not show how their method would perform against standard adversarial attack techniques, since by explaining a neural network they should be able to guard against attacks, or at-least explain why they work well. 
+2) The paper reports results on 2 datasets, out of which on 1 of them it does not perform well and gets stuck in a local minima therefore implying that it is not able to capture the diversity in the data well. 
+
+3) The authors provide limited evaluation on a few attributes of CelebA. Extensive evaluation that would show on a larger scale with more attributes is not performed.
+
+4) The authors also have claimed that the added parts should be interpretable and visible. However, the perturbations of the latent space would yield small 
+ variation in the image and it need not actually explain why the modification is yielding a correct classification, the same way an imperceptible adversarial attack yields a misclassification. Therefore there is no guarantee that the added parts would be interpretable. What would be more reasonable to claim would be that the latent transformations that yield correct classifications are projected into the original image space. Some of these yield interpretations that are semantically meaningful and some of these do not yield semantically meaningful interpretations.
+
+5)  Solving mis-classification does not seem to equate with explaining the neural network, but rather only suggest where it makes mistakes. That is not equal to an explanation about how it is making a classification decision. That would rather be done by using the same input and perturbing the weights of the classifier network. 
+
+In conclusion, the paper in its current form provides a direction in terms of using latent space exploration to understand classification errors and corrections to them in terms of perturbations of the latent space. However, these are not conclusive yet and actually verifying this would need a more thorough evaluation.】】
+【Review: In this paper, the authors aim to better understand the classification of neural networks. The authors explore the latent space of a variational auto encoder and consider the perturbations of the latent space in order to obtain the correct classification. They evaluate their method on CelebA and MNIST datasets.
+
+Pros:
+
+ 1) The paper explores an alternate methodology that uses perturbation in latent spaces to better understand neural networks innovation
+2) It takes inspiration from adversarial examples and uses the explicit classifier loss to better perturb the 
+ in the latent space
+something novelty：The method is quite simple and captures the essence of the problem well
+
+Cons:
+The main drawback of the paper is it claims to understand working of neural networks, however, actually what the authors end up doing are perturbations of the encoded latent space. This would evidently not explain why a deep network generates misclassifications for instance understanding the failure modes of ResNet or DenseNet cannot be obtained through this method. Other drawbacks include:
+
+1)     They do not show how their method would perform against standard adversarial attack techniques, since by explaining a neural network they should be able to guard against attacks, or at-least explain why they work well. 
+2) The paper reports results on 2 datasets, out of which on 1 of them it does not perform well and gets stuck in a local minima therefore implying that it is not able to capture the diversity in the data well. 
+
+3) The authors provide limited evaluation on a few attributes of CelebA. Extensive evaluation that would show on a larger scale with more attributes is not performed.
+
+4) The authors also have claimed that the added parts should be interpretable and visible. However, the perturbations of the latent space would yield small 
+ variation in the image and it need not actually explain why the modification is yielding a correct classification, the same way an imperceptible adversarial attack yields a misclassification. Therefore there is no guarantee that the added parts would be interpretable. What would be more reasonable to claim would be that the latent transformations that yield correct classifications are projected into the original image space. Some of these yield interpretations that are semantically meaningful and some of these do not yield semantically meaningful interpretations.
+
+5)  Solving mis-classification does not seem to equate with explaining the neural network, but rather only suggest where it makes mistakes. That is not equal to an explanation about how it is making a classification decision. That would rather be done by using the same input and perturbing the weights of the classifier network. 
+
+In conclusion, the paper in its current form provides a direction in terms of using latent space exploration to understand classification errors and corrections to them in terms of perturbations of the latent space. However, these are not conclusive yet and actually verifying this would need a more thorough evaluation.】
+【Comment: Summary of the paper: This paper presents a reinforcement learning approach to the problem of mitigating the effects of certain psychoacoustic annoyance metrics on drivers in automated vehicles. The paper explores the options of opening/closing windows, as well as traveling at varying discrete speeds. Using an epsilon-greedy strategy, the paper trains to Q-function to optimize over a reward function that takes into account fluctuation, roughness, loudness, and sharpness. The resulting optimal policy learns to mitigate these annoyance factors by closing the window of the car and driving an slower speeds.
+
+Novelty:
+- The reward function is clearly defined and easy to understand.
+- The related works section provides good insight into the problem domain for people not versed in the field of vibrio-acoustical systems.
+- Noise is an important component of vehicle automation that (unlike safety and mobility) is not often discussed.
+
+List of all the major issues:
+- The final result of the learning agent seems to suggest that the solution to psyachoustic noises is driving on exceedingly slow speeds (< 8mph). However, this result does not take into account the mobility aspects of driving, namely the driver’s desire to reach his/her destination within a certain period of time. This in itself may serve as a separate, but equally important, annoyance metric.
+- The benefit of learning the aforementioned control policy from a reinforcement learning approach is not clear, as the notion of closing windows and slowing down can be easily hand-designed a priori.
+
+List of all the minor issues:
+- Discussions about alarms in the “Introduction” section is misleading, this paper revolves around environment-generate noises, not human-generated ones
+- Some more citations or examples/statistics are needed on the effects of noise on human driving in the “Related Works” section would be beneficial to individuals not well versed in the field.
+- Citations on the type of deep RL method used would be helpful in further understanding the training process.
+- In paragraph 5 of the “Introduction” section, the proper word is joint, not joined.
+
+Recommendations: Returning to some of the points made in the list of major issues, it would be interesting to discuss how comfort and mobility can both be accommodated in the learned policy, either through adding mobility to the reward or imposing a constraint ensuring vehicles can reach their destination within a certain period of time. In addition, I think the results would be more valuable if a more complex noise mitigation strategy can be learned by the agent by providing with a larger degree of control on the vehicle (e.g. gear ratios, driving on neutral, etc…).】
+【Review: This paper proposes a method for explaining the classification mistakes of neural networks. For a misclassified image, gradient descent is used to find the minimal change to the input image so that it will be correctly classified. 
+
+My understanding is that the proposed method does not explain why a classifier makes mistakes. Instead, it is about: what can be added/removed from the input image so that it can be correctly classified. Strictly speaking, "Explaining the Decisions of Neural Networks" is not the most relevant title for the proposed method. 
+
+Based on my understanding about what the paper proposes, I am not sure how useful this method is, from the application point of view. It is unclear to me how this method can shed light to the mistakes of a classifier. 
+
+The technical aspects of the paper are straight forward optimization problem, with a sensible formulation and gradient descent optimization problem. There is nothing extraordinary about the proposed technique. 
+
+The method assumes the availability of a generative model, VAE. The implicit assumption is that this VAE performs well, and it raises a concern about the application domains where VAE does not work well. In this case, would the visualization reflect the shortcoming of VAE or the mistake of the classifier? 】
+【Review: This paper presents an embedding algorithm for text corpora that allows known
+covariates, e.g. author information, to modify a shared embedding to take context
+into account. The method is an extension of the GloVe method and in the case of
+a single covariate value the proposed method reduces to GloVe. The covariate-dependent
+embeddings are diagonal scalings of the shared embedding. The authors demonstrate
+the method on a corpus of books by various authors and on a corpus of subreddits.
+Though not technically difficult, the extension of GloVe to covariate-dependent
+embeddings is very interesting and well motivated. Some of the experimental results
+do a good job of demonstrating the advantages of the models. However, some of the
+experiments are not obvious that the model is really doing a good job.
+
+I have some small qualms with the presentation of the method. First, using the term
+"size m" for the number of values that the covariate can take is a bit misleading.
+Usually the size of a covariate Originality would be the dimensionality. These would be the same
+if the covariate is one hot coded, however, this isn't obvious in the paper right now.
+Additionally, v_i and c_k live in R^d, however, it's not really explained what
+'d' is, is it the number of 'topics', or something else? Additionally, the functional
+form chosen for f() in the objective was chosen to match previous work but with no
+explanation as to why that's a reasonable form to choose. Finally, the authors
+say toward the end of Section 2 that "A careful comparision shows that this
+approximation is precisely that which is implied by equation 4, as desired". This is
+cryptic, just show us that this is the case.
+
+Regarding the experiments there needs to be more discussion about how the
+different model parameters were determined. The authors say "... and after tuning
+our algorithm to emged this dataset, ...", but this isn't enough. What type of
+tuning did you do to choose in particular the latent dimensionality and the
+learning rate? I will detail concerns for the specific experiments below.
+
+Section 4.1:
+- How does held-out data fit into the plot?
+
+Section 4.2:
+- For the second embedding, what exactly was the algorithm trained on? Just the
+  book, or the whole corpus?
+- What is the reader supposed to take away from Table 1? Are higher or lower
+  values better? Maybe highlight the best scores for each column.
+
+
+Section 4.3:
+- Many of these distributions don't look sparse.
+- There is a terminology problem in this section. Coordinates in a vector are
+  not sparse, the vector itself is sparse if there are many zeros, but
+  coordinates are either zero or not zero. The authors' use of 'sparse' when
+  they mean 'zero' is really confusing.
+- Due to the weird sparsity terminology Table 1 is very confusing. Based on how
+  the authors use 'sparse' I think that Table 1 shows the fraction of zeros in
+  the learned embedding vectors. But if so, then these vectors aren't sparse at all
+  as most values are non-zero.
+  your the Originality is also clear.
+Section 5.1:
+- I don't agree with the authors that the topics in Table 3 are interpretable.
+  As such, I think it's a reach to claim the model is learning interpretable topics.
+  This isn't necessarily a problem, it's fine for models to not do everything well,
+  but it's a stretch for the authors to claim that these results are a positive
+  aspect of the model. The results in Section 5.2 seem to make a lot of sense and
+  show the big contribution of the model.】
+【Review: This paper produces word embedding tensors where the third order gives covariate information, via venue or author. The model is simple: tensor factorization, where the covariate can be viewed as warping the cosine distance to favor that covariate's more commonly cooccuring vocabulary (e.g. trump on hillary and crooked)
+
+
+There is a nice variety of authors and words, though I question if even with all those books, the corpus is big enough to produce meaningful vectors. From my own experience, even if I spend several hours copy-pasting from project gutenberg, it is not enough for even good matrix factorization embeddings, much less tensor embeddings. It is hard to believe that meaningful results are achieved using such a small dataset with random initialization. 
+
+I think table 5 is also a bit strange. If the rank is > 1000 I wonder how meaningful it actually is. For the usual analogies task, you can usually find what you are looking for in the top 5 or less. 
+
+It seems that table 1 is the only evaluation of the proposed method against any other type of method (glove, which is not a tensor-based method). I think this is not sufficient. 
+
+Overall, I believe the idea is nice, and the initial analysis is good, but I think the evaluation, especially against other methods, needs to be stronger. Methods like neelakantan et al's multisense embedding, for example, which the work cites, can be used in some of these evaluations, specifically on those where covariate information clearly contributes (like contextual tasks). The addition of one or two tables with either a standard task against reported results or created tasks against downloadable contextual / tensor embeddings would be enough for me to change my vote. 】
+【Comment: We appreciate the reviewers’ helpful comments.
+
+Reviewer1 and Reviewer2 both suggest further experimental analysis to evaluate the robustness of our approach to systematic mismatches between the true and modeled measurement functions. This is a great idea and towards this, we have performed the following experiment:
+
+We consider the observed measurements in the block pixels model with the probability of blocking pixels (p*) = 0.5. We then attempt to use the AmbientGAN setup to learn a generative model without any knowledge of p*. We try several different values of p for the simulated measurements and plot inception score vs the assumed dropout probability p. Please see the plot in Appendix D of the updated pdf.
+
+We observe that the inception score peaks at the true value and gradually drops on both sides. This suggests that using p only approximately equal to p* still yields a good generative model, indicating that the AmbientGAN setup is robust to systematic mismatches between the true and modeled measurement functions. It would be interesting to analyze the robustness properties further, both empirically and theoretically. 
+
+Reviewer2's comment also suggests attempting to estimate the parameters of the measurement function. This seems important in practical settings and we thank the reviewer for pointing this out. Going even further, one can also attempt to estimate the measurement function including its function form. We remark that distributional assumptions are necessary for any such procedure and it would be interesting to construct and analyze estimators under various settings. For instance, if we know that zero pixels are rare (e.g., the celebA dataset), then we can easily estimate the dropout probability by counting the number of zero pixels in the measurements. Further, since one cannot expect the estimation to be perfect, robustness, as alluded to above, is necessary. We are keen to explore these ideas further.
+
+To answer Reviewer2’s question about getting a useful model, we attempted to use the GAN learned using our procedure for compressed sensing. Generative models have been shown to improve sensing over sparsity-based approaches (https://arxiv.org/abs/1703.03208). Through the following experiment, we show that a similar improvement is obtained using the GANs learned through the AmbientGAN approach.
+
+We train an AmbientGAN with block pixels measurements on MNIST with p = 0.5. Using the learned generator, we follow the rest of the procedure in (https://arxiv.org/abs/1703.03208). Using their code (available at https://github.com/AshishBora/csgm) we can plot the reconstruction error vs the number of measurements, comparing Lasso with AmbientGAN. Please see the plot in Appendix D of the updated pdf; we find that the AmbientGAN model gives significant improvements for a wide range of measurements.】
+【Review: The paper proposes an approach to train generators within a GAN framework, in the setting where one has access only to degraded / imperfect measurements of real samples, rather than the samples themselves. Broadly, the approach is to have a generator produce the "full" real data, pass it through a simulated model of the measurement process, and then train the discriminator to distinguish between these simulated measurements of generated samples, and true measurements of real samples. By this mechanism, the proposed method is able to train GANs to generate high-quality samples from only imperfect measurements.
+
+The paper is largely well-written and well-motivated, the overall setup is interesting (I find the authors' practical use cases convincing---where one only has access to imperfect data in the first place), and the empirical results are convincing. The theoretical proofs do make strong assumptions (in particular, the fact that the true distribution must be uniquely constrained by its marginal along the measurement). However, in most theoretical analysis of GANs and neural networks in general, I view proofs as a means of gaining intuition rather than being strong guarantees---and to that end, I found the analysis in this paper to be informative.
+Pros and innovation:
+I would make a  suggestions for possible further experimental analysis: it would be nice to see how robust the approach is to systematic mismatches between the true and modeled measurement functions (for instance, slight differences in the blur kernels, noise variance, etc.). Especially in the kind of settings the paper considers, I imagine it may sometimes also be hard to accurately model the measurement function of a device (or it may be necessary to use a computationally cheaper approximation for training). I think a study of how such mismatches affect the training procedure would be instructive (perhaps more so than some of the quantitative evaluation given that they at best only approximately measure sample quality).】
+【Review: The paper explores GAN training under a linear measurement model in which one assumes that the underlying state vector 
+ is not directly observed but we do have access to measurements 
+ under a linear measurement model plus noise. The paper explores in detail several practically useful versions of the linear measurement model, such as blurring, linear projection, masking etc. and establishes identifiability conditions/theorems for the underlying models.
+The AmbientGAN approach advocated in the paper amounts to learning end-to-end differentiable Generator/Discriminator networks that operate in the measurement space. The experimental results in the paper show that this works much better than reasonable baselines, such as trying to invert the measurement model for each individual training sample, followed by standard GAN training.
+The theoretical analysis is satisfactory. However, it would be great if the theoretical results in the paper were able to associate the difficulty of the inversion process with the difficulty of AmbientGAN training. For example, if the condition number for the linear measurement model is high, one would expect that recovering the target real distribution is more difficult. The condition in Theorem 5.4 is a step in this direction, showing that the required number of samples for correct recovery increases with the probability of missing data. It would be great if Theorems 5.2 and 5.3 also came with similar quantitative bounds.】
+【Review: Quick summary:
+This paper shows how to train a GAN in the case where the dataset is corrupted by some measurement noise process. They propose to introduce the noise process into the generation pipeline such that the GAN generates a clean image, corrupts its own output and feeds that into the discriminator. The discriminator then needs to decide whether this is a real corrupted measurement or a generated one.  The method is demonstrated to the generate better results than the baseline on a variety of datasets and noise processes.
+
+Quality:
+I found this to be a nice paper - it has an important setting to begin with and the proposed method is clean and elegant albeit a bit simple. 
+
+Originality:
+I'm pretty sure this is the first paper to tackle this problem directly in general.
+
+Significance:
+This is an important research direction as it is not uncommon to get noisy measurements in the real world under different circumstances. 
+
+Pros:
+* Important problem
+* elegant and simple solution
+* nice results and decent experiments (but see below)
+Methodology：None
+Cons:
+* The assumption that the measurement process *and* parameters are known is quite a strong one. Though it is quite common in the literature to assume this, it would have been interesting to see if there's a way to handle the case where it is unknown (either the process, parameters or both).
+* The baseline experiments are a bit limited - it's clear that such baselines would never produce samples which are any better than the "fixed" version which is fed into them. I can't however, think of other baselines other than "ignore" so I guess that is acceptable.
+* I wish the authors would show that they get a *useful* model eventually - for example, can this be used to denoise other images from the dataset?
+
+Summary:
+This is a nice paper which deals with an important problem, has some nice results and while not groundbreaking, certainly merits a publication.】
+【Review: I like the idea of the paper,it's very new and novelty. Momentum and accelerations are proved to be very useful both in deterministic and stochastic optimization. It is natural that it is understood better in the deterministic case. However, this comes quite naturally, as deterministic case is a bit easier ;) Indeed, just recently people start looking an accelerating in stochastic formulations. There is already accelerated SVRG, Jain et al 2017, or even Richtarik et al (arXiv: 1706.01108, arXiv:1710.10737).
+
+I would somehow split the contributions into two parts:
+1) Theoretical contribution: Proposition 3 (+ proofs in appendix)
+2) Experimental comparison.
+
+I like the experimental part (it is written clearly, and all experiments are described in a lot of detail).
+
+I really like the Proposition 3 as this is the most important contribution of the paper. (Indeed, Algorithms 1 and 2 are for reference and Algorithm 3 was basically described in Jain, right?). 
+
+Significance: I think that this paper is important because it shows that the classical HB method cannot achieve acceleration in a stochastic regime.
+
+Clarity: I was easy to read the paper and understand it.
+】
+【Review: I only got access to the paper after the review deadline; and did not have a chance to read it until now. Hence the lateness and brevity.
+
+The paper is reasonably well written, something novelty, and tackles an important problem. I did not check the mathematics. 
+
+Besides the missing literature mentioned by other reviewers (all directly relevant to the current paper), the authors should also comment on the availability of accelerated methods inn the finite sum / ERM setting. There, the questions this paper is asking are resolved, and properly modified stochastic methods exist which offer acceleration over SGD (and not through minibatching). This paper does not comment on these developments. Look at accelerated SDCA (APPROX, ASDCA), accelerated SVRG (Katyusha) and so on.
+
+Provided these changes are made, I am happy to suggest acceptance.】
+【Review: Language models are important components to many NLP tasks. The current state-of-the-art language models are based on recurrent neural networks which compute the probability of a word given all previous words using a softmax function over a linear function of the RNN's hidden state. This paper argues the softmax is not expressive enough and proposes to use a more flexible mixture of softmaxes. The use of a mixture of softmaxes is novelty and  motivated from a theoretical point of view by translating language modeling into matrix factorization.
+
+Originality:None
+
+Pros:
+--The paper is very well written and easy to follow novelty. The ideas build up on each other in an intuitive way.
+--The idea behind the paper is novel: translating language modeling into a matrix factorization problem is new as far as I know.
+--The maths is very rigorous.
+--The experiment section is thorough.
+
+Cons:
+--To claim SOTA all models need to be given the same capacity (same number of parameters). In Table 2 the baselines have a lower capacity. This is an unfair comparison
+--I suspect the proposed approach is slower than the baselines. There is no mention of computational cost. Reporting that would help interpret the numbers. 】

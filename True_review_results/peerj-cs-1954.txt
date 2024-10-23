@@ -1,0 +1,24 @@
+**Basic reporting
+The authors proposed a novel approach for the recognition of isolated sign language videos using Resnet and Support Vector Machines. The paper is interesting but needs major improvements.
+First, the abstract does not highlight the actual contribution as SVM and Resnet are well known algorothms. I believe that utlizing these approahces in an effective manner leads to an important contribution, but abstact fails to show the actual working of proposed work.
+Second, why authors didnt explored Hourglass network that are specifically designed for post estimation. Some other good allternatives are also missing in discussion such as Densenet.
+The title is too confusing, i will suggest do not use abbrevaution and also avoid to lengthen it.
+The proposed framewrok is missing leads to a question regarding the major contribution. There is a need of in-depth figure with detail discussion on proposed framework that should highlight the actual contribution.
+
+**Methodology**
+1. The paper proposes a system that combines ResNet-18 model training with pose data for spatial feature extraction and MHIs for temporal information.
+2. It explores the impact of finger pose-based MHIs and linear interpolation for missing pose data estimation.
+
+**Validity and Reliability of Experiments**
+1.The utilization of support vector machine (SVM) for classification enhances the SLR system.
+
+**Questions:
+1、Could you provide more details about the potential limitations of the proposed methodology?
+
+**Experimental design
+Included in basic reporting
+
+**Validity of the findings
+Finding seems valid but needs a detailed comparsion with recent studies.
+
+review results: Minor revision

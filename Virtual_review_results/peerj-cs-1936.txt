@@ -1,0 +1,38 @@
+* Overall Review
+The main point of this paper is to explore communication behavior recognition at the signal level, specifically focusing on how radiation sources communicate. The study aims to extract features from intercepted signals and analyze unique radio frequency characteristics to understand underlying communication behavior.
+
+* Innovation and Contribution
+(1) The paper introduces a novel approach to communication behavior recognition by analyzing radio frequency characteristics.
+(2) The study explores the utilization of convolutional neural networks for classifying one-dimensional time-domain data in communication behavior detection.
+
+* Methodology
+The research utilizes convolutional neural networks to classify and identify communication behaviors using data from communication stations. The study aims to develop a customized CNN for this purpose and validate its effectiveness empirically.
+
+* Effectiveness and Reliability of Experiments
+(1) The paper lacks detailed information on the experimental setup and methodology.
+(2) The effectiveness of the proposed CNN model in detecting communication patterns needs to be rigorously tested and validated.
+
+* Adequacy and Appropriateness of Conclusions
+(1) The conclusions should be more detailed and supported by concrete experimental results.
+(2) The study needs to provide clearer recommendations based on the research findings.
+
+* Strengths
+(1) Introduction of a novel approach to communication behavior recognition.
+(2) Exploration of CNNs for classifying time-domain data in communication behavior detection.
+(3) Focus on understanding communication patterns in radiation source signals.
+
+* Weaknesses
+(1) Lack of detailed experimental information and validation of the proposed CNN model.
+(2) Insufficient clarity in the conclusions and recommendations.
+(3) Limited discussion on the practical implications of the research findings.
+
+* Questions and Suggestions for Authors
+1. Can you provide more information on the experimental setup and methodology used in the study?
+2. How do you plan to further validate the effectiveness of the proposed CNN model in detecting communication patterns?
+3. Could you elaborate on the practical applications of the research findings in real-world scenarios?
+
+* Overall Rating
+I would rate this paper a 6 out of 10. While the study introduces innovative ideas, there are significant areas that need further development and clarification, particularly in terms of experimental validation and conclusive insights.
+
+* Review Result
+The paper requires major revisions to address the lack of experimental details, strengthen the conclusions, and provide clearer recommendations based on the research findings.

@@ -1,0 +1,7 @@
+Experimental design
+1. Expanding the testing of these methods across diverse datasets would enhance the paper by demonstrating their effectiveness and robustness in varied scenarios. Have the authors explored the application of these methods on additional datasets?
+
+2. Investigating the sensitivity of these methods to hyperparameters and providing detailed guidelines for their selection would greatly benefit the paper. This would ensure the methods' broader applicability and ease of use. Could the authors elaborate on the hyperparameter selection process for each proposed method?
+
+Validity of the findings
+1. The potential increase in computational complexity due to the multi-view approaches warrants a detailed discussion of computational demands and potential optimization strategies. How do the proposed multi-view methods.

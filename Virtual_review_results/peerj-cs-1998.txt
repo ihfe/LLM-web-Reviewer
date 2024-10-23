@@ -1,0 +1,10 @@
+A series of issues are still present in the article, so it cannot be accepted for publication. The authors should address the points described by the reviewers and prepare a new version of the manuscript.
+
+Experimental design
+1. Expanding the testing of these methods across diverse datasets would enhance the paper by demonstrating their effectiveness and robustness in varied scenarios. Have the authors explored the application of these methods on additional datasets?
+
+2. Investigating the sensitivity of these methods to hyperparameters and providing detailed guidelines for their selection would greatly benefit the paper. This would ensure the methods' broader applicability and ease of use. Could the authors elaborate on the hyperparameter selection process for each proposed method?
+
+Validity of the findings
+The paper highlights the LIME method for model explanation. Please give examples on the explanation result and the findings behind them.
+The authors mentioned the model outperforms previous studies occurred in cervical cancer research, please explain on what aspect the model purposed in the paper is better, introduce what are these methods, and run experiments for comparision.

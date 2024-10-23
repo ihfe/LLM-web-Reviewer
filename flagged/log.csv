@@ -1,0 +1,27 @@
+请输入你的API-key(sk开头的字符串),Prompts,请上传论文PDF文件(请务必等pdf上传完成后再点击Submit！),选择输出语言,分析结果,资源统计,flag,username,timestamp
+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,通用prompt,C:\Users\ASUS\Desktop\2023graduate\ChatReviewer-web-main\flagged\请上传论文PDF文件请务必等pdf上传完成后再点击Submit\e4d4343a7cdb992eb69ac3315523550cb51c8e17\2312.15320.pdf,English,"* Overall Review
+The paper introduces GestaltMML, a multimodal machine learning approach, and GestaltGPT, a GPT-based methodology, to predict rare genetic diseases by integrating facial images, demographic information, and clinical texts. The study demonstrates the effectiveness of combining multiple modalities of data in narrowing down candidate genetic diagnoses and facilitating the reinterpretation of genome/exome sequencing data.
+
+* Paper Strength
+1. Innovative Approach: Introducing a novel multimodal machine learning methodology using Transformer architecture.
+2. Comprehensive Evaluation: Conducting evaluations on diverse datasets and external validation datasets to showcase the robustness of the proposed methods.
+3. Insightful Analysis: Uncovering the importance of integrating facial images, demographic information, and clinical texts for accurate diagnosis of rare genetic diseases.
+
+* Paper Weakness
+1. Model Updating Process: The need to adjust the classification head and retrain the model when incorporating new diseases may be less user-friendly compared to other approaches.
+2. Image Embedding Efficacy: Linear patch embedding for images may show lower efficacy compared to textual embedding, suggesting the need for more advanced feature extraction methods.
+3. Adaptation Challenges: Creating a foundational multimodal model pretrained on patient facial images and medical captions poses challenges due to data availability and resource requirements.
+
+* Questions To Authors And Suggestions For Rebuttal
+1. Can you elaborate on the process of adjusting the classification head and retraining the model when adding new diseases? Are there potential strategies to streamline this process?
+2. How do you plan to address the limitations of the image embedding efficacy and explore more sophisticated feature extraction methods in future research?
+3. Considering the challenges in obtaining diverse patient data for a foundational multimodal model, what alternative strategies are being considered to address this issue?
+
+* Overall score (1-10): 8
+The paper presents innovative methodologies and insightful analyses for predicting rare genetic diseases by combining facial images, demographic information, and clinical texts. The comprehensive evaluations and robustness demonstrated in external validation datasets enhance the paper's value. However, addressing the identified weaknesses and challenges in model updating and feature extraction could further strengthen the research.
+
+⚠伦理声明/Ethics statement：
+--禁止直接复制生成的评论用于任何论文审稿工作！
+--Direct copying of generated comments for any paper review work is prohibited!","使用token数：10336
+花费时间：15.16秒",,,2024-03-24 14:23:55.882447
+,,,,,,,,2024-03-28 17:56:48.873327

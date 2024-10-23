@@ -1,0 +1,20 @@
+Basic reporting
+The manuscript currently references outdated cancer statistics which are at least 5 years old. Updating the paper with the most recent data on cancer statistics is recommended to maintain the relevance and accuracy of the information presented.
+
+The use of "however" in line 69 does not align well with the context. A careful review of the grammar and spelling throughout the manuscript will enhance its readability. Moreover, the introduction contains repetitive statements, which should be refined to avoid redundancy.
+
+The coherence between paragraphs needs to be improved. Presently, there is a lack of clear demarcation between the introduction and literature review sections, resulting in an overlap of information. It is advised to clearly delineate the boundaries by reserving epidemiological data, statistics, and screening issues for the introduction, and focusing on comparing traditional approaches with ML & DL models in the literature review
+
+Experimental design
+The data set derived from Kaggle is originally from the UCI Repository, a fact that should be acknowledged to give proper credit to the primary source.
+
+The methodology section lacks clarity in explaining how the automated tool for prediction was utilized. Additionally, the paper seems to lack innovative elements, as even the model selection process is automated. It would benefit the study to introduce more depth and originality in the approach,
+
+The usage of the DX:cancer column in the training phase raises concerns about the validity of the predictions, especially when the objective is to predict the necessity of a biopsy. It is advisable to reassess the inclusion of this variable in the initial training to maintain the integrity of the predictions.
+
+Validity of the findings
+The claim regarding the screening ability of the model is contentious given the nature of the dataset utilized. Traditional cervical cancer screening entails processing image data, a component conspicuously missing in the current approach which instead focuses on assessing the risk of developing cancer. The manuscript should revisit this claim to align the narrative with the actual capabilities of the developed model.
+
+The title "Integrated modeling approach to predict cervical cancer in women" seems to overstate the capabilities of the model given that it primarily assesses the risk factors rather than directly predicting cervical cancer occurrences. It would be prudent to modify the title to accurately reflect the scope and the objective of the study.
+
+review results: Minor Review

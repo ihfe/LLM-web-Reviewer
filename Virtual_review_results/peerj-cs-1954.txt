@@ -1,0 +1,40 @@
+**Overall Review**
+
+The main point of this paper is to propose a novel approach for isolated sign language recognition (SLR) by integrating pose data and motion history images (MHIs) using the ResNet-18 model.
+
+**Innovation and Contribution**
+1. The integration of pose data and MHIs for SLR.
+2. The introduction of finger pose-based MHIs (FP-MHI) to capture subtle gesture dynamics.
+
+**Methodology**
+1. The paper proposes a system that combines ResNet-18 model training with pose data for spatial feature extraction and MHIs for temporal information.
+2. It explores the impact of finger pose-based MHIs and linear interpolation for missing pose data estimation.
+
+**Validity and Reliability of Experiments**
+1. The methodology demonstrates competitiveness with existing SLR approaches.
+2. The utilization of support vector machine (SVM) for classification enhances the SLR system.
+
+**Adequacy and Appropriateness of Conclusions**
+1. The conclusions provide an evaluation of the findings and offer recommendations for the future development of SLR systems.
+2. The study contributes to enhancing communication capabilities for individuals with hearing impairments.
+
+**Strengths**
+1. Innovative integration of pose data and MHIs for SLR.
+2. Comprehensive methodology with competitive results.
+3. Clear structure with well-defined sections.
+
+**Weaknesses**
+1. Lack of detailed discussion on the limitations of the proposed methodology.
+2. Limited comparison with existing state-of-the-art SLR systems.
+3. Insufficient exploration of the impact of including body and face data in the classification process.
+
+**Questions and Suggestions for Authors**
+1. Could you provide more insights into the potential limitations of the proposed methodology?
+2. Have you considered conducting further comparisons with other advanced SLR systems?
+3. How do you plan to address the impact of including body and face data in the classification process in future research?
+
+**Overall Rating**
+I would rate this paper a 7.5. The paper presents a novel approach to SLR with competitive results and clear contributions to the field. However, further exploration and comparisons could enhance the robustness of the study.
+
+**Review Result**
+Minor Revision
